@@ -37,7 +37,7 @@ const SearchBar = () => {
           <FontAwesomeIcon icon={faArrowRight} />
         </button>
       </div>
-      <div className="mt-5"> {/* Adjusted margin */}
+      <div className="mt-5"> 
         {card && (
           <div>
             <h3 className="text-xl font-semibold">{card.title}</h3>

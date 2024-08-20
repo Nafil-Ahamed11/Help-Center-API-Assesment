@@ -19,8 +19,8 @@ exports.createCard = async (req, res) => {
 
   exports.getCards = async (req, res) => {
     try {
-      const cards = await Card.find(); // Fetch all cards from MongoDB
-      res.status(200).json(cards); // Send the cards data to the frontend
+      const cards = await Card.find(); 
+      res.status(200).json(cards); 
     } catch (error) {
       res.status(500).json({ error: 'Failed to load cards.' });
     }
@@ -28,14 +28,14 @@ exports.createCard = async (req, res) => {
 
 
 exports.getCardByTitle = async (req, res) => {
-    const { title } = req.params; // extract the title from the URL parameters
+    const { title } = req.params;
   
     try {
-      const card = await Card.findOne({ title: { $regex: new RegExp(title, 'i') } }); // case-insensitive search
+      const card = await Card.findOne({ title: { $regex: new RegExp(title, 'i') } }); 
       if (!card) {
         return res.status(404).json({ error: 'Card not found.' });
       }
-      res.status(200).json(card); // return the found card
+      res.status(200).json(card);
     } catch (error) {
       res.status(500).json({ error: 'Failed to retrieve card.' });
     }

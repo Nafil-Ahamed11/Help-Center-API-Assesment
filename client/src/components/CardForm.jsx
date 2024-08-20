@@ -15,8 +15,6 @@ const CardForm = () => {
       setDescription('');
       setError(null);
       setSuccessMessage(response.data.message);
-      
-      // Clear success message after 3 seconds
       setTimeout(() => {
         setSuccessMessage('');
       }, 3000);
